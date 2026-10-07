@@ -1,0 +1,278 @@
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 250px;
+    padding-top: 1px;
+    background-color: rgb(26, 24, 24);
+    
+
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    
+   
+}
+
+.menu a:hover {
+    color: rgb(189, 175, 175);
+}
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* MENU */
+
+header {
+    width: 100%;
+    background-color: #0b0b0b;
+    border-bottom: 1px solid #333;
+}
+
+.menu {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+}
+
+.logo span {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #aaa;
+}
+
+
+/* BANNER */
+
+.banner {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 10%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111 0%,
+            rgba(17, 17, 17, 0.85) 40%,
+            rgba(17, 17, 17, 0.2) 100%
+        ),
+        url("https://images.unsplash.com/photo-1546519638-68e109498ffc")
+        center/cover;
+}
+
+.banner-texto {
+    max-width: 600px;
+}
+
+.banner h1 {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+
+/* BOTÃO */
+
+.botao {
+    display: inline-block;
+
+    background-color: white;
+    color: black;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #ccc;
+    transform: translateY(-3px);
+}
+
+
+/* CONTEÚDO */
+
+.conteudo {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 80px 30px;
+}
+
+.conteudo h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+
+    border-left: 5px solid white;
+    padding-left: 15px;
+}
+
+.conteudo p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #1b1b1b;
+
+    padding: 30px;
+
+    border: 1px solid #333;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: white;
+}
+
+.card h3 {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+}
+
+
+/* CURIOSIDADES */
+
+.curiosidades {
+    background-color: #171717;
+
+    max-width: none;
+
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    background-color: #080808;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #888;
+
+    border-top: 1px solid #333;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+    .menu {
+        padding: 0 5%;
+    }
+
+    .menu ul {
+        gap: 15px;
+    }
+
+    .banner {
+        padding: 60px 8%;
+    }
+
+    .banner h1 {
+        font-size: 45px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+    .foto {
+    display: flex;
+    gap: 20px;
+}
+
+.foto img {
+    height: 350px;
+    object-fit: cover;
+}

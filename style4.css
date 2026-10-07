@@ -1,0 +1,328 @@
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 250px;
+    padding-top: 1px;
+    background-color: rgb(26, 24, 24);
+    
+
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    
+   
+}
+
+.menu a:hover {
+    color: rgb(189, 175, 175);
+}
+
+
+
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* BANNER */
+
+.banner {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 10%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111 0%,
+            rgba(17, 17, 17, 0.85) 40%,
+            rgba(17, 17, 17, 0.2) 100%
+        ),
+        url(https://s2-ge.glbimg.com/zzgmt1hFqsKy9fEagXvRbzZNkLg=/1080x608/top/smart/https://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/0/b/lXShxxTMuYT82inztM2w/bola-nba.webp)
+        center/cover;
+}
+
+.banner-texto {
+    max-width: 600px;
+}
+
+.banner h1 {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+
+/* BOTÃO */
+
+.botao {
+    display: inline-block;
+
+    background-color: white;
+    color: black;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #ccc;
+    transform: translateY(-3px);
+}
+
+
+/* CONTEÚDO */
+
+.conteudo {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 80px 30px;
+}
+
+.conteudo h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+
+    border-left: 5px solid white;
+    padding-left: 15px;
+}
+
+.conteudo p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #1b1b1b;
+
+    padding: 30px;
+
+    border: 1px solid #333;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: white;
+}
+
+.card h3 {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+}
+
+
+/* CURIOSIDADES */
+
+.curiosidades {
+    background-color: #171717;
+
+    max-width: none;
+
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    background-color: #080808;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #888;
+
+    border-top: 1px solid #333;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+    .menu {
+        padding: 0 5%;
+    }
+
+    .menu ul {
+        gap: 15px;
+    }
+
+    .banner {
+        padding: 60px 8%;
+    }
+
+    .banner h1 {
+        font-size: 45px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.tabela-nba {
+    background-color: #202126;
+    color: #f1f1f1;
+
+    padding: 30px;
+
+    max-width: 1100px;
+    margin: 40px auto;
+
+    border-radius: 8px;
+}
+
+.tabela-nba h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.descricao {
+    font-size: 17px;
+    color: #d0d0d0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+
+/* TABELA */
+
+.tabela-nba table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* CABEÇALHO */
+
+.tabela-nba th {
+    text-align: left;
+
+    padding: 15px 10px;
+
+    color: #e8e8e8;
+
+    font-size: 15px;
+
+    border-bottom: 1px solid #3b3c42;
+}
+
+
+/* CÉLULAS */
+
+.tabela-nba td {
+    padding: 15px 10px;
+
+    color: #d8d8d8;
+
+    border-bottom: 1px solid #3b3c42;
+
+    line-height: 1.5;
+}
+
+
+/* NOME DAS FRANQUIAS */
+
+.tabela-nba td:first-child {
+    font-weight: bold;
+    color: white;
+}
+
+
+/* COLUNA DE TÍTULOS */
+
+.tabela-nba td:nth-child(2) {
+    font-weight: bold;
+    width: 100px;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.tabela-nba tbody tr:hover {
+    background-color: #292a30;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    .tabela-nba {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .tabela-nba table {
+        min-width: 650px;
+    }
+
+}
