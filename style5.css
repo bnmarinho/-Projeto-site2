@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #006BB6; /* Azul NBA */
+    --secondary-color: #ED174C; /* Vermelho NBA */
+    --accent-color: #FDB927; /* Dourado */
+    --bg-dark: #0B0E14;
+    --card-bg: #161B26;
+    --text-light: #F4F6F9;
+    --text-muted: #A0AEC0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
+nav {
+    background-color: #06080C;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 15px 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-logo span { color: var(--secondary-color); }
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- HEADER & HERO --- */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+header p {
+    font-size: 1.3rem;
+    color: #E2E8F0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    border-left: 6px solid var(--secondary-color);
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section {
+    margin-bottom: 70px;
+}
+
+/* --- GRILLA DE CURIOSIDADES --- */
+.grid-curiosidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 30px;
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 107, 182, 0.25);
+    border-top-color: var(--accent-color);
+}
+
+.card h3 {
+    font-size: 1.35rem;
+    color: #FFF;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* --- TABELA DE RECORDES --- */
+.table-container {
+    overflow-x: auto;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 18px 22px;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+tr {
+    border-bottom: 1px solid #232D42;
+}
+
+tr:nth-child(even) {
+    background-color: #1C2331;
+}
+
+tr:hover {
+    background-color: #242F42;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #06080C;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    border-top: 2px solid #161B26;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    header h1 { font-size: 2.3rem; }
+    header p { font-size: 1.1rem; }
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 290px;
+    background-color: rgb(26, 24, 24);
+    padding: 1px;
+
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    
+   
+}
+
+.menu a:hover {
+    color: rgb(189, 175, 175);
+}

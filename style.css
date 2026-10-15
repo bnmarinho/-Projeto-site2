@@ -1,24 +1,27 @@
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 293px;
-    background-color: rgb(26, 24, 24);
-    
 
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 290px;
+  padding-top: -100px;
+  background-color: rgb(26, 24, 24);
+ 
 }
 
+
 .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    font-weight: bolder;
-    
-   
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+  
+ 
 }
 
 .menu a:hover {
-    color: rgb(189, 175, 175);
+  color: rgb(189, 175, 175);
 }
 
 
@@ -39,6 +42,9 @@ body {
     padding: 20px 0;
     overflow-x: hidden;
     overflow-y: auto;
+    padding: 0 20px;
+    padd
+  
 }
 
 
