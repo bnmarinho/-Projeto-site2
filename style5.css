@@ -1,3 +1,23 @@
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 20px;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  
+  .menu a:hover {
+    color: rgb(189, 175, 175);
+  }
+
+
 :root {
     --primary-color: #006BB6; /* Azul NBA */
     --secondary-color: #ED174C; /* Vermelho NBA */
@@ -215,25 +235,3 @@ footer {
 }
 
 
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 290px;
-    background-color: rgb(26, 24, 24);
-    padding: 1px;
-
-}
-
-.menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    font-weight: bolder;
-    
-   
-}
-
-.menu a:hover {
-    color: rgb(189, 175, 175);
-}

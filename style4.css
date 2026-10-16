@@ -1,26 +1,21 @@
 .menu {
     display: flex;
     align-items: center;
-    gap: 290px;
-    padding-top: 1px;
-    background-color: rgb(26, 24, 24);
-    
-
-}
-
-.menu a {
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 20px;
+  }
+  
+  .menu a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    font-family: Arial, sans-serif;
     font-weight: bolder;
-    
-   
-}
-
-.menu a:hover {
+  }
+  
+  .menu a:hover {
     color: rgb(189, 175, 175);
-}
+  }
 
 
 
