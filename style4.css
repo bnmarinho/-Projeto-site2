@@ -1,3 +1,23 @@
+/* CONFIGURAÇÕES GERAIS: remove espaçamentos padrão e mantém os tamanhos previsíveis. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ROLAGEM: deixa suave a navegação pelos links internos. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* CORPO: define fundo escuro, letras brancas e fonte da página. */
+body {
+    background-color: rgb(26, 24, 24);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MENU: alinha os links horizontalmente e cria espaço entre eles. */
 .menu {
     display: flex;
     align-items: center;
@@ -5,43 +25,21 @@
     gap: 40px;
     padding: 10px 20px;
   }
-  
-  .menu a {
+
+/* LINKS DO MENU: define cor, tamanho e destaque dos textos. */
+.menu a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bolder;
   }
-  
-  .menu a:hover {
+
+/* HOVER DO MENU: muda a cor quando o mouse passa pelo link. */
+.menu a:hover {
     color: rgb(189, 175, 175);
   }
 
-
-
-
-/* CONFIGURAÇÕES GERAIS */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #111;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
-/* BANNER */
-
+/* BANNER: cria a seção principal com imagem, gradiente e alinhamento. */
 .banner {
     min-height: 550px;
 
@@ -61,15 +59,18 @@ body {
         center/cover;
 }
 
+/* TEXTO DO BANNER: limita a largura para facilitar a leitura. */
 .banner-texto {
     max-width: 600px;
 }
 
+/* TÍTULO DO BANNER: destaca o nome da página. */
 .banner h1 {
     font-size: 65px;
     margin-bottom: 20px;
 }
 
+/* PARÁGRAFO DO BANNER: configura tamanho, cor e espaçamento. */
 .banner p {
     font-size: 20px;
     line-height: 1.6;
@@ -77,9 +78,7 @@ body {
     margin-bottom: 30px;
 }
 
-
-/* BOTÃO */
-
+/* BOTÃO: estiliza o link de acesso à seção seguinte. */
 .botao {
     display: inline-block;
 
@@ -96,14 +95,13 @@ body {
     transition: 0.3s;
 }
 
+/* HOVER DO BOTÃO: muda a cor e eleva o botão ao passar o mouse. */
 .botao:hover {
     background-color: #ccc;
     transform: translateY(-3px);
 }
 
-
-/* CONTEÚDO */
-
+/* CONTEÚDO: centraliza e limita a largura das seções de texto. */
 .conteudo {
     max-width: 1100px;
 
@@ -112,6 +110,7 @@ body {
     padding: 80px 30px;
 }
 
+/* SUBTÍTULOS: aumenta a fonte e adiciona uma barra branca à esquerda. */
 .conteudo h2 {
     font-size: 40px;
     margin-bottom: 30px;
@@ -120,6 +119,7 @@ body {
     padding-left: 15px;
 }
 
+/* PARÁGRAFOS: melhora a leitura com cor e altura de linha. */
 .conteudo p {
     color: #ccc;
     font-size: 18px;
@@ -128,9 +128,81 @@ body {
     margin-bottom: 20px;
 }
 
+/* TABELA NBA: cria a caixa que mostra os maiores campeões. */
+.tabela-nba {
+    background-color: #202126;
+    color: #f1f1f1;
 
-/* CARDS */
+    padding: 30px;
 
+    max-width: 1100px;
+    margin: 40px auto;
+
+    border-radius: 8px;
+}
+
+/* TÍTULO DA TABELA: define tamanho e espaço abaixo do título. */
+.tabela-nba h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* DESCRIÇÃO DA TABELA: apresenta o texto introdutório. */
+.descricao {
+    font-size: 17px;
+    color: #d0d0d0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* TABELA: ocupa a largura disponível e une as bordas. */
+.tabela-nba table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* CABEÇALHO DA TABELA: estiliza os nomes das colunas. */
+.tabela-nba th {
+    text-align: left;
+
+    padding: 15px 10px;
+
+    color: #e8e8e8;
+
+    font-size: 15px;
+
+    border-bottom: 1px solid #3b3c42;
+}
+
+/* CÉLULAS DA TABELA: define espaçamento, cor e divisórias. */
+.tabela-nba td {
+    padding: 15px 10px;
+
+    color: #d8d8d8;
+
+    border-bottom: 1px solid #3b3c42;
+
+    line-height: 1.5;
+}
+
+/* NOMES DAS FRANQUIAS: destaca a primeira coluna. */
+.tabela-nba td:first-child {
+    font-weight: bold;
+    color: white;
+}
+
+/* TÍTULOS CONQUISTADOS: destaca a segunda coluna. */
+.tabela-nba td:nth-child(2) {
+    font-weight: bold;
+    width: 100px;
+}
+
+/* HOVER DA TABELA: ilumina a linha quando o mouse passa sobre ela. */
+.tabela-nba tbody tr:hover {
+    background-color: #292a30;
+}
+
+/* CARDS: distribui os cartões de regras em três colunas. */
 .cards {
     display: grid;
 
@@ -141,6 +213,7 @@ body {
     margin-top: 40px;
 }
 
+/* CARD: define fundo, borda e espaçamento interno de cada cartão. */
 .card {
     background-color: #1b1b1b;
 
@@ -153,25 +226,26 @@ body {
     transition: 0.3s;
 }
 
+/* HOVER DO CARD: levanta o cartão e destaca sua borda. */
 .card:hover {
     transform: translateY(-8px);
 
     border-color: white;
 }
 
+/* TÍTULO DO CARD: destaca o assunto de cada regra. */
 .card h3 {
     font-size: 28px;
 
     margin-bottom: 15px;
 }
 
+/* TEXTO DO CARD: define o tamanho dos parágrafos internos. */
 .card p {
     font-size: 16px;
 }
 
-
-/* CURIOSIDADES */
-
+/* CURIOSIDADES: define fundo e largura da seção, caso seja utilizada. */
 .curiosidades {
     background-color: #171717;
 
@@ -181,9 +255,7 @@ body {
     padding-right: 10%;
 }
 
-
-/* RODAPÉ */
-
+/* RODAPÉ: centraliza os créditos no fim da página. */
 footer {
     background-color: #080808;
 
@@ -196,9 +268,7 @@ footer {
     border-top: 1px solid #333;
 }
 
-
-/* RESPONSIVIDADE */
-
+/* RESPONSIVIDADE: adapta menu, banner e cards a telas de até 800px. */
 @media (max-width: 800px) {
 
     .menu {
@@ -223,92 +293,7 @@ footer {
 
 }
 
-.tabela-nba {
-    background-color: #202126;
-    color: #f1f1f1;
-
-    padding: 30px;
-
-    max-width: 1100px;
-    margin: 40px auto;
-
-    border-radius: 8px;
-}
-
-.tabela-nba h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.descricao {
-    font-size: 17px;
-    color: #d0d0d0;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-
-/* TABELA */
-
-.tabela-nba table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-
-/* CABEÇALHO */
-
-.tabela-nba th {
-    text-align: left;
-
-    padding: 15px 10px;
-
-    color: #e8e8e8;
-
-    font-size: 15px;
-
-    border-bottom: 1px solid #3b3c42;
-}
-
-
-/* CÉLULAS */
-
-.tabela-nba td {
-    padding: 15px 10px;
-
-    color: #d8d8d8;
-
-    border-bottom: 1px solid #3b3c42;
-
-    line-height: 1.5;
-}
-
-
-/* NOME DAS FRANQUIAS */
-
-.tabela-nba td:first-child {
-    font-weight: bold;
-    color: white;
-}
-
-
-/* COLUNA DE TÍTULOS */
-
-.tabela-nba td:nth-child(2) {
-    font-weight: bold;
-    width: 100px;
-}
-
-
-/* EFEITO AO PASSAR O MOUSE */
-
-.tabela-nba tbody tr:hover {
-    background-color: #292a30;
-}
-
-
-/* CELULAR */
-
+/* RESPONSIVIDADE DA TABELA: permite rolagem horizontal em celulares. */
 @media (max-width: 700px) {
 
     .tabela-nba {

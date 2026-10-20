@@ -1,3 +1,4 @@
+/* CONFIGURAÇÕES GERAIS: remove margens e espaçamentos padrão e define a fonte do site. */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,18 +6,23 @@
   font-family: Arial, sans-serif;
 }
 
+/* CORPO DA PÁGINA: define o fundo escuro, a cor das letras e a altura mínima. */
 body {
   background-color: #111;
   color: #fff;
   min-height: 100vh;
 }
 
-/* Header / Menu */
+/* CABEÇALHO: define a faixa superior escura e sua largura. */
 .header {
   background-color: rgb(26, 24, 24);
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
+/* MENU: alinha o logo e os links lado a lado e controla os espaços. */
 .menu {
   display: flex;
   align-items: center;
@@ -25,6 +31,7 @@ body {
   padding: 10px 20px;
 }
 
+/* LINKS DO MENU: define cor, tamanho e destaque dos textos clicáveis. */
 .menu a {
   color: white;
   text-decoration: none;
@@ -32,11 +39,13 @@ body {
   font-weight: bolder;
 }
 
+/* EFEITO DO MENU: muda a cor do link quando o mouse passa por cima. */
 .menu a:hover {
   color: rgb(189, 175, 175);
 }
 
 /* Container de 3 Colunas Exatas */
+/* ESTRUTURA PRINCIPAL: organiza as três colunas e os espaços entre elas. */
 .page-container {
   display: flex;
   justify-content: center;
@@ -48,6 +57,7 @@ body {
 }
 
 /* Colunas Laterais Esquerda e Direita */
+/* COLUNA ESQUERDA: define a largura e a disposição das tabelas de classificação. */
 .left-sidebar {
   width: 240px;
   display: flex;
@@ -56,14 +66,7 @@ body {
   flex-shrink: 0;
 }
 
-.right-sidebar {
-  width: 270px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex-shrink: 0;
-}
-
+/* CAIXAS LATERAIS: define fundo, borda e espaço interno dos painéis. */
 .widget-box {
   background-color: #1a1a1a;
   border: 1px solid #333;
@@ -72,6 +75,7 @@ body {
   width: 100%;
 }
 
+/* TÍTULOS DOS PAINÉIS: destaca os títulos com letras e linha azul. */
 .widget-title {
   font-size: 0.9rem;
   font-weight: bold;
@@ -81,42 +85,192 @@ body {
   text-transform: uppercase;
 }
 
-/* Tabelas de Classificação */
+
+/* TABELAS: define largura e aparência geral das classificações. */
 .standings-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.78rem;
 }
 
+/* CÉLULAS DAS TABELAS: ajusta espaçamento, alinhamento e divisórias. */
 .standings-table th, .standings-table td {
   padding: 5px;
   text-align: left;
   border-bottom: 1px solid #282828;
 }
 
+/* CABEÇALHO DA TABELA: deixa os nomes das colunas em azul. */
 .standings-table th {
   color: #00a2ff;
 }
 
+/* Feed Central (Cards Noticiosos) */
+/* ÁREA CENTRAL: organiza os cartões das notícias em uma coluna. */
+.main-feed {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Card Principal com Gradiente Escuro Integrado na Foto */
+/* PRIMEIRO CARTÃO: configura fundo com imagem do LeBron, gradiente e borda. */
+.featured-card {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-color: #000;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.5) 70%, transparent 100%), url('https://a.espncdn.com/photo/2026/0716/nba_lebron_james_philadelphia_sixers_cr_16x9.jpg');
+  background-size: cover;
+  background-position: right center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: 1px solid #282828;
+  
+}
+
+/* BANNER AZUL: cria a faixa do League Pass acima da notícia. */
+.top-banner {
+  background-color: #0066ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+/* TEXTO DO BANNER: destaca a chamada em negrito e itálico. */
+.banner-text {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* LADO DIREITO DO BANNER: alinha League Pass e botão de assinatura. */
+.banner-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* LEAGUE PASS: define o destaque e tamanho desse texto. */
+.league-pass {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+/* BOTÃO ASSINE JÁ: cria o botão branco arredondado. */
+.btn-signup {
+  background: #fff;
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* CONTEÚDO DA NOTÍCIA: define espaçamento e largura da área de texto. */
+.main-content {
+  padding: 30px 40px;
+  max-width: 480px;
+}
+
+/* TÍTULO DA NOTÍCIA: deixa o texto grande, forte e em maiúsculas. */
+.title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+/* PARÁGRAFOS: controla cor, tamanho e espaçamento das descrições. */
+.description {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* CONTEÚDO RELACIONADO: estiliza o título dessa seção. */
+.related-content h3 {
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+/* LISTAS: remove os marcadores padrão das listas. */
+.related-content ul, .main-content ul {
+  list-style: none;
+}
+
+/* ITENS DE LISTA: define o espaço entre os itens. */
+.related-content li, .main-content li {
+  margin-bottom: 6px;
+}
+
+/* LINKS RELACIONADOS: define a aparência dos links para outros conteúdos. */
+.related-content a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* EFEITO DOS LINKS: sublinha o link quando o mouse passa por cima. */
+.related-content a:hover {
+  text-decoration: underline;
+}
+
+/* SEGUNDO CARTÃO: usa a imagem do Shai e ajusta a altura. */
+.featured-card2 {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.5) 75%, transparent 100%), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8K63Meqs-h0ivPWJryh0vkG06kIx-uWW4touhZ0Kvay1bljA1BJMZCX1a&s=10');
+  min-height: auto;
+  
+}
+
+/* TERCEIRO CARTÃO: usa a imagem da notícia sobre Bronny James. */
+.featured-card3 {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.5) 75%, transparent 100%), url('https://s2-ge.glbimg.com/TbXwsjh1gNiHDeyNfy7fbWyJl3M=/0x0:5284x3523/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/z/A/II51N9TVGKBKqYLkySnQ/2026-09-28t222403z-903100992-mt1usatoday29944560-rtrmadp-3-nba-los-angeles-lakers-media-day.jpg');
+  min-height: auto;
+}
+
+/* COLUNA DIREITA: define a largura e organiza os painéis laterais. */
+.right-sidebar {
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
 /* Jogos e Notícias da Lateral Direita */
+/* JOGOS: separa visualmente cada partida na coluna direita. */
 .game-item {
   margin-bottom: 10px;
   border-bottom: 1px solid #282828;
   padding-bottom: 6px;
 }
 
+/* DATA DOS JOGOS: destaca o horário e a data em azul. */
 .game-date {
   font-size: 0.7rem;
   color: #00a2ff;
   font-weight: bold;
 }
 
+/* TIMES DOS JOGOS: destaca os nomes das equipes. */
 .game-teams {
   font-size: 0.85rem;
   font-weight: bold;
   color: #fff;
 }
 
+/* NOTÍCIAS LATERAIS: organiza os itens de notícias da coluna direita. */
 .sidebar-item {
   display: flex;
   flex-direction: column;
@@ -124,12 +278,14 @@ body {
   margin-bottom: 12px;
 }
 
+/* CATEGORIA DA NOTÍCIA: mostra o rótulo pequeno em azul. */
 .sidebar-item span {
   font-size: 0.65rem;
   color: #00a2ff;
   font-weight: bold;
 }
 
+/* LINK DA NOTÍCIA LATERAL: configura o texto clicável. */
 .sidebar-item a {
   color: #fff;
   text-decoration: none;
@@ -137,23 +293,27 @@ body {
   font-weight: bold;
 }
 
+/* EFEITO DOS LINKS LATERAIS: sublinha ao passar o mouse. */
 .sidebar-item a:hover {
   text-decoration: underline;
 }
 
 /* Formulário de Sugestões na Barra Lateral */
+/* FORMULÁRIO: organiza os campos de sugestões em coluna. */
 .feedback-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+/* GRUPO DO FORMULÁRIO: mantém cada rótulo junto ao seu campo. */
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
+/* RÓTULOS: estiliza os textos Nome, E-mail e Sua Sugestão. */
 .form-group label {
   font-size: 0.75rem;
   font-weight: bold;
@@ -161,6 +321,7 @@ body {
 }
 
 .form-group input,
+/* CAIXA DE SUGESTÕES: impede o redimensionamento manual. */
 .form-group textarea {
   width: 100%;
   padding: 7px;
@@ -177,10 +338,12 @@ body {
   border-color: #00a2ff;
 }
 
+/* CAIXA DE SUGESTÕES: impede o redimensionamento manual. */
 .form-group textarea {
   resize: none;
 }
 
+/* BOTÃO ENVIAR: define cor azul, tamanho e formato do botão. */
 .btn-submit {
   background-color: #00a2ff;
   color: #fff;
@@ -193,121 +356,7 @@ body {
   margin-top: 4px;
 }
 
+/* EFEITO DO BOTÃO: escurece o azul quando o mouse passa por cima. */
 .btn-submit:hover {
   background-color: #0082cc;
-}
-
-/* Feed Central (Cards Noticiosos) */
-.main-feed {
-  width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-/* Card Principal com Gradiente Escuro Integrado na Foto */
-.featured-card {
-  position: relative;
-  width: 100%;
-  min-height: 600px;
-  background-color: #000;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.5) 70%, transparent 100%), url('https://a.espncdn.com/photo/2026/0716/nba_lebron_james_philadelphia_sixers_cr_16x9.jpg');
-  background-size: cover;
-  background-position: right center;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 4px;
-  border: 1px solid #282828;
-}
-
-.featured-card2 {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.5) 75%, transparent 100%), url('https://4kwallpapers.com/images/wallpapers/shai-gilgeous-5120x2880-20902.jpg');
-  min-height: auto;
-}
-
-.featured-card3 {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.5) 75%, transparent 100%), url('https://s2-ge.glbimg.com/TbXwsjh1gNiHDeyNfy7fbWyJl3M=/0x0:5284x3523/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/z/A/II51N9TVGKBKqYLkySnQ/2026-09-28t222403z-903100992-mt1usatoday29944560-rtrmadp-3-nba-los-angeles-lakers-media-day.jpg');
-  min-height: auto;
-}
-
-.top-banner {
-  background-color: #0066ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 20px;
-}
-
-.banner-text {
-  font-weight: 900;
-  font-style: italic;
-  font-size: 1.1rem;
-}
-
-.banner-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.league-pass {
-  font-weight: bold;
-  font-size: 0.85rem;
-}
-
-.btn-signup {
-  background: #fff;
-  color: #000;
-  padding: 4px 12px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
-
-.main-content {
-  padding: 30px 40px;
-  max-width: 480px;
-}
-
-.title {
-  font-size: 1.6rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1.1;
-  margin-bottom: 15px;
-}
-
-.description {
-  font-size: 0.85rem;
-  color: #ccc;
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
-
-.related-content h3 {
-  font-size: 0.75rem;
-  margin-bottom: 10px;
-  color: #ddd;
-}
-
-.related-content ul, .main-content ul {
-  list-style: none;
-}
-
-.related-content li, .main-content li {
-  margin-bottom: 6px;
-}
-
-.related-content a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.related-content a:hover {
-  text-decoration: underline;
 }

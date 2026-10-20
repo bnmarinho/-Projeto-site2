@@ -1,28 +1,13 @@
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 10px 20px;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bolder;
-}
-
-.menu a:hover {
-  color: rgb(189, 175, 175);
-}
-
+/* CONFIGURAÇÕES GERAIS
+   Remove margens e espaçamentos padrão dos elementos e facilita o cálculo dos tamanhos. */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* CORPO DA PÁGINA
+   Define o fundo escuro com detalhes em degradê, a fonte e a cor geral dos textos. */
 body {
   background-color: #0b0e14;
   background-image: 
@@ -35,12 +20,52 @@ body {
   padding-bottom: 60px;
 }
 
-/* HEADER */
+/* BARRA SUPERIOR
+   Define o fundo do cabeçalho do menu e mantém a barra visível no topo ao rolar a página. */
+.header3 {
+  background-color: rgb(26, 24, 24);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+}
+
+/* MENU DE NAVEGAÇÃO
+   Organiza o logo e os links lado a lado, centralizados e com espaço entre eles. */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 20px;
+}
+
+/* LINKS DO MENU
+   Deixa os links brancos, sem sublinhado, e define o tamanho e o peso da fonte. */
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+/* EFEITO AO PASSAR O MOUSE NO MENU
+   Muda a cor do link para um cinza claro quando o mouse passa por cima. */
+.menu a:hover {
+  color: rgb(189, 175, 175);
+}
+
+/* CABEÇALHO DO CONTEÚDO
+   Centraliza o título e o subtítulo da página e define os espaços ao redor. */
 .header {
   text-align: center;
   padding: 50px 20px 30px;
+  
 }
 
+/* TÍTULO PRINCIPAL
+   Destaca o texto 'FRANQUIAS DA NBA' com letras grandes e um efeito de degradê. */
 .main-title {
   font-size: 2.2rem;
   font-weight: 900;
@@ -51,38 +76,31 @@ body {
   margin-bottom: 8px;
 }
 
+/* SUBTÍTULO
+   Define a cor e o tamanho do texto que aparece abaixo do título. */
 .subtitle {
   color: #64748b;
   font-size: 0.95rem;
 }
 
-/* CONTAINER E GRID (EXATAMENTE 3 POR LINHA) */
+/* CONTAINER PRINCIPAL
+   Limita a largura do conteúdo e mantém os cartões centralizados na página. */
 .container {
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* GRID DOS TIMES
+   Distribui os cartões em três colunas, com 20 pixels de espaço entre eles. */
 .nba-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-/* RESPONSIVIDADE PARA TELAS MENORES */
-@media (max-width: 1080px) {
-  .nba-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 680px) {
-  .nba-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* CARTÃO DO TIME (LAYOUT HORIZONTAL COM IMAGEM NA ESQUERDA) */
+/* CARTÃO DE CADA TIME
+   Cria a caixa com fundo escuro, borda arredondada, sombra e conteúdo lado a lado. */
 .team-card {
   background: #131722;
   border: 1px solid #1e293b;
@@ -98,7 +116,8 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Linha colorida indicativa à esquerda */
+/* FAIXA COLORIDA DO CARTÃO
+   Cria uma faixa vertical na esquerda; a cor depende da classe de cada time. */
 .team-card::before {
   content: '';
   position: absolute;
@@ -108,13 +127,16 @@ body {
   width: 4px;
 }
 
+/* EFEITO AO PASSAR O MOUSE NO CARTÃO
+   Levanta um pouco o cartão e destaca a borda e a sombra. */
 .team-card:hover {
   transform: translateY(-4px);
   border-color: #334155;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* LOGO DO TIME */
+/* ÁREA DO ESCUDO DO TIME
+   Reserva um espaço fixo para o logo, com fundo discreto e bordas arredondadas. */
 .team-logo-wrapper {
   flex-shrink: 0;
   width: 75px;
@@ -128,6 +150,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* IMAGEM DO ESCUDO
+   Faz o logo caber na área disponível sem distorcer suas proporções. */
 .team-logo {
   max-width: 100%;
   max-height: 100%;
@@ -135,13 +159,16 @@ body {
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
 
-/* INFORMAÇÕES DO TIME */
+/* INFORMAÇÕES DO TIME
+   Organiza o nome, a conferência, a história e os títulos em uma coluna. */
 .team-info {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
+/* NOME DO TIME
+   Define o tamanho, a espessura e a cor do título de cada franquia. */
 .team-title {
   font-size: 1.2rem;
   font-weight: 700;
@@ -149,6 +176,8 @@ body {
   line-height: 1.2;
 }
 
+/* ETIQUETA DA CONFERÊNCIA
+   Formata o pequeno destaque que indica a conferência do time. */
 .team-conference {
   display: inline-block;
   font-size: 0.65rem;
@@ -161,9 +190,16 @@ body {
   align-self: flex-start;
 }
 
+/* CONFERÊNCIA OESTE
+   Usa azul para identificar os times do Oeste. */
 .team-conference.oeste { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+
+/* CONFERÊNCIA LESTE
+   Usa rosa-avermelhado para identificar os times do Leste. */
 .team-conference.leste { color: #f43f5e; background: rgba(244, 63, 94, 0.12); }
 
+/* DESCRIÇÃO E HISTÓRIA DO TIME
+   Ajusta a leitura dos parágrafos e listas sobre cada franquia. */
 .team-description {
   font-size: 0.82rem;
   line-height: 1.45;
@@ -171,6 +207,8 @@ body {
   margin-bottom: 10px;
 }
 
+/* RODAPÉ DO CARTÃO
+   Mostra a quantidade de títulos do time, com texto destacado. */
 .team-footer {
   font-size: 0.78rem;
   font-weight: 600;
@@ -180,7 +218,8 @@ body {
   gap: 4px;
 }
 
-/* CORES LATERAIS DOS TIMES */
+/* CORES LATERAIS DOS 30 TIMES
+   Cada classe define a cor da faixa vertical do cartão correspondente. */
 .lakers::before { background: #552583; }
 .celtics::before { background: #007a33; }
 .warriors::before { background: #1d428a; }
@@ -211,6 +250,23 @@ body {
 .blazers::before { background: #e03a3e; }
 .jazz::before { background: #002b5c; }
 .pelicans::before { background: #c6a052; }
+
+/* RESPONSIVIDADE PARA TELAS MÉDIAS
+   Em telas de até 1080 pixels, o grid passa de três para duas colunas. */
+@media (max-width: 1080px) {
+  .nba-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* RESPONSIVIDADE PARA CELULARES
+   Em telas de até 680 pixels, os cartões ficam em uma coluna. */
+@media (max-width: 680px) {
+  .nba-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
  
 
 

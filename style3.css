@@ -1,3 +1,32 @@
+/* 1. CONFIGURAÇÕES GERAIS
+   Remove margens e espaçamentos padrão, define o cálculo de tamanhos,
+   ativa a rolagem suave e escolhe as cores e a fonte da página. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 2. CABEÇALHO E MENU
+   Mantém o menu no topo da tela e organiza os links de navegação. */
+header {
+    background-color: rgb(26, 24, 24);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .menu {
     display: flex;
     align-items: center;
@@ -17,35 +46,8 @@
     color: rgb(189, 175, 175);
   }
 
-/* CONFIGURAÇÕES GERAIS */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #111;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* MENU */
-
-header {
-    width: 100%;
-    background-color: #0b0b0b;
-    border-bottom: 1px solid #333;
-}
-
-
-
+/* 3. ELEMENTOS ADICIONAIS DO MENU
+   Define o texto do logo e o alinhamento de listas, quando presentes. */
 .logo span {
     font-size: 32px;
     font-weight: bold;
@@ -58,6 +60,8 @@ header {
     gap: 35px;
 }
 
+/* Regras posteriores dos links: mantidas depois das anteriores
+   para preservar a prioridade original do CSS. */
 .menu a {
     color: white;
     text-decoration: none;
@@ -69,9 +73,8 @@ header {
     color: #aaa;
 }
 
-
-/* BANNER */
-
+/* 4. BANNER PRINCIPAL
+   Exibe a foto de fundo com um gradiente escuro para destacar o texto. */
 .banner {
     min-height: 550px;
 
@@ -91,10 +94,12 @@ header {
         center/cover;
 }
 
+/* Limita a largura do texto do banner. */
 .banner-texto {
     max-width: 600px;
 }
 
+/* Título e parágrafo do banner. */
 .banner h1 {
     font-size: 65px;
     margin-bottom: 20px;
@@ -107,9 +112,8 @@ header {
     margin-bottom: 30px;
 }
 
-
-/* BOTÃO */
-
+/* 5. BOTÃO DO BANNER
+   Estiliza o link para a história e o efeito ao passar o mouse. */
 .botao {
     display: inline-block;
 
@@ -131,9 +135,8 @@ header {
     transform: translateY(-3px);
 }
 
-
-/* CONTEÚDO */
-
+/* 6. CONTEÚDO DA HISTÓRIA
+   Centraliza o conteúdo e define a aparência dos títulos e parágrafos. */
 .conteudo {
     max-width: 1100px;
 
@@ -158,9 +161,20 @@ header {
     margin-bottom: 20px;
 }
 
+/* 7. IMAGENS DA HISTÓRIA
+   Posiciona lado a lado as imagens do logo da NBA e de Jerry West. */
+    .foto {
+    display: flex;
+    gap: 20px;
+}
 
-/* CARDS */
+.foto img {
+    height: 350px;
+    object-fit: cover;
+}
 
+/* 8. CARTÕES DA LINHA DO TEMPO
+   Organiza os acontecimentos históricos em três colunas. */
 .cards {
     display: grid;
 
@@ -171,6 +185,7 @@ header {
     margin-top: 40px;
 }
 
+/* Aparência individual de cada cartão. */
 .card {
     background-color: #1b1b1b;
 
@@ -183,12 +198,14 @@ header {
     transition: 0.3s;
 }
 
+/* Eleva o cartão quando o mouse passa por cima. */
 .card:hover {
     transform: translateY(-8px);
 
     border-color: white;
 }
 
+/* Textos dentro dos cartões. */
 .card h3 {
     font-size: 28px;
 
@@ -199,9 +216,8 @@ header {
     font-size: 16px;
 }
 
-
-/* CURIOSIDADES */
-
+/* 9. CURIOSIDADES E IMPORTÂNCIA DA NBA
+   Diferencia a seção final com outro tom de fundo. */
 .curiosidades {
     background-color: #171717;
 
@@ -211,9 +227,8 @@ header {
     padding-right: 10%;
 }
 
-
-/* RODAPÉ */
-
+/* 10. RODAPÉ
+   Centraliza o texto de direitos autorais no final da página. */
 footer {
     background-color: #080808;
 
@@ -226,9 +241,8 @@ footer {
     border-top: 1px solid #333;
 }
 
-
-/* RESPONSIVIDADE */
-
+/* 11. RESPONSIVIDADE
+   Ajusta menu, banner e cartões para telas menores que 800px. */
 @media (max-width: 800px) {
 
     .menu {
@@ -252,14 +266,4 @@ footer {
     }
 
 
-}
-
-    .foto {
-    display: flex;
-    gap: 20px;
-}
-
-.foto img {
-    height: 350px;
-    object-fit: cover;
 }
