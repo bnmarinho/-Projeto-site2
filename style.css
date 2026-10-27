@@ -1,362 +1,949 @@
-/* CONFIGURAÇÕES GERAIS: remove margens e espaçamentos padrão e define a fonte do site. */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+
+/* ==========================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================== */
+
+/* O asterisco seleciona todos os elementos do site.
+   box-sizing: border-box faz a largura incluir o conteúdo,
+   o preenchimento interno e as bordas.
+   margin e padding zerados removem espaços automáticos.
+   font-family define Arial como fonte padrão. */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* CORPO DA PÁGINA: define o fundo escuro, a cor das letras e a altura mínima. */
+/* Configura a página inteira.
+   background-color deixa o fundo cinza-escuro.
+   color define os textos brancos como padrão.
+   min-height faz o corpo ocupar pelo menos toda a altura da tela. */
 body {
-  background-color: #111;
-  color: #fff;
-  min-height: 100vh;
+    background-color: #111;
+    color: #fff;
+    min-height: 100vh;
 }
 
-/* CABEÇALHO: define a faixa superior escura e sua largura. */
+
+/* ==========================================================
+   2. CABEÇALHO E MENU DE NAVEGAÇÃO
+   ========================================================== */
+
+/* Cria a faixa superior do site.
+   position: sticky mantém o cabeçalho visível durante a rolagem.
+   top: 0 fixa sua posição no topo da janela.
+   z-index: 100 faz o cabeçalho ficar à frente de outros elementos. */
 .header {
-  background-color: rgb(26, 24, 24);
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    background-color: rgb(26, 24, 24);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* MENU: alinha o logo e os links lado a lado e controla os espaços. */
+/* Organiza o logotipo e os links do menu em uma linha.
+   display: flex ativa o sistema flexível de organização.
+   align-items centraliza os itens verticalmente.
+   justify-content centraliza o conjunto horizontalmente.
+   gap define o espaço entre os itens.
+   padding cria espaço interno ao redor do menu. */
 .menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 20px;
 }
 
-/* LINKS DO MENU: define cor, tamanho e destaque dos textos clicáveis. */
+/* Personaliza os links do menu.
+   color deixa os links brancos.
+   text-decoration: none remove o sublinhado.
+   font-size define o tamanho do texto.
+   font-weight deixa as letras em negrito. */
 .menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bolder;
 }
 
-/* EFEITO DO MENU: muda a cor do link quando o mouse passa por cima. */
+/* Muda a cor do link quando o visitante passa o mouse sobre ele. */
 .menu a:hover {
-  color: rgb(189, 175, 175);
+    color: rgb(189, 175, 175);
 }
 
-/* Container de 3 Colunas Exatas */
-/* ESTRUTURA PRINCIPAL: organiza as três colunas e os espaços entre elas. */
+
+/* ==========================================================
+   3. ORGANIZAÇÃO PRINCIPAL DO SITE
+   ========================================================== */
+
+/* Organiza a coluna esquerda, as notícias centrais
+   e a coluna direita na mesma linha.
+   display: flex coloca as áreas lado a lado.
+   justify-content centraliza o conjunto horizontalmente.
+   align-items: flex-start alinha as áreas pelo topo.
+   gap cria espaço entre as três colunas.
+   max-width limita a largura total do conjunto.
+   margin: 20px auto cria espaço acima e abaixo
+   e centraliza o conjunto na página.
+   padding evita que o conteúdo encoste nas bordas da tela. */
 .page-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  max-width: 1500px;
-  margin: 20px auto;
-  padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 0 10px;
 }
 
-/* Colunas Laterais Esquerda e Direita */
-/* COLUNA ESQUERDA: define a largura e a disposição das tabelas de classificação. */
+
+/* ==========================================================
+   4. COLUNA ESQUERDA
+   ========================================================== */
+
+/* Define a aparência e a organização da coluna esquerda,
+   onde ficam as tabelas de classificação.
+   width define sua largura de 240 pixels.
+   flex-direction: column empilha os painéis verticalmente.
+   gap cria espaço entre os painéis.
+   flex-shrink: 0 impede que a coluna seja reduzida
+   automaticamente quando faltar espaço. */
 .left-sidebar {
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex-shrink: 0;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
 }
 
-/* CAIXAS LATERAIS: define fundo, borda e espaço interno dos painéis. */
+/* Define a aparência dos painéis laterais.
+   background-color cria o fundo escuro.
+   border adiciona uma borda cinza discreta.
+   border-radius arredonda os cantos.
+   padding cria espaço entre a borda e o conteúdo.
+   width: 100% faz o painel ocupar toda a largura disponível. */
 .widget-box {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 4px;
-  padding: 15px;
-  width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 15px;
+    width: 100%;
 }
 
-/* TÍTULOS DOS PAINÉIS: destaca os títulos com letras e linha azul. */
+/* Formata os títulos dos painéis laterais.
+   font-size controla o tamanho das letras.
+   font-weight deixa o título em negrito.
+   border-bottom adiciona uma linha azul abaixo do título.
+   padding-bottom afasta o texto dessa linha.
+   margin-bottom cria espaço entre o título e o conteúdo.
+   text-transform: uppercase transforma as letras em maiúsculas. */
 .widget-title {
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-bottom: 2px solid #00a2ff;
-  padding-bottom: 6px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-bottom: 2px solid #00a2ff;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 
-/* TABELAS: define largura e aparência geral das classificações. */
+/* ==========================================================
+   5. TABELAS DE CLASSIFICAÇÃO DA NBA
+   ========================================================== */
+
+/* Faz as tabelas ocuparem toda a largura dos painéis.
+   border-collapse: collapse une as bordas das células.
+   font-size diminui o tamanho do texto para caber melhor. */
 .standings-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.78rem;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
 }
 
-/* CÉLULAS DAS TABELAS: ajusta espaçamento, alinhamento e divisórias. */
-.standings-table th, .standings-table td {
-  padding: 5px;
-  text-align: left;
-  border-bottom: 1px solid #282828;
+/* Formata as células de cabeçalho (th) e de conteúdo (td).
+   padding cria espaço dentro de cada célula.
+   text-align: left alinha o texto à esquerda.
+   border-bottom separa as linhas com uma borda discreta. */
+.standings-table th,
+.standings-table td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #282828;
 }
 
-/* CABEÇALHO DA TABELA: deixa os nomes das colunas em azul. */
+/* Deixa os nomes das colunas da tabela em azul. */
 .standings-table th {
-  color: #00a2ff;
+    color: #00a2ff;
 }
 
-/* Feed Central (Cards Noticiosos) */
-/* ÁREA CENTRAL: organiza os cartões das notícias em uma coluna. */
+
+/* ==========================================================
+   6. ÁREA CENTRAL DAS NOTÍCIAS
+   ========================================================== */
+
+/* Define a coluna onde ficam as notícias.
+   width estabelece uma largura inicial de 900 pixels.
+   min-width: 0 permite que a coluna diminua quando necessário.
+   flex: 1 1 0 permite que ela cresça ou diminua
+   para ocupar o espaço disponível no layout.
+   display: flex ativa a organização flexível.
+   flex-direction: column coloca os cartões um abaixo do outro.
+   gap define o espaço entre os cartões principais. */
 .main-feed {
-  width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+    width: 900px;
+    min-width: 0;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-/* Card Principal com Gradiente Escuro Integrado na Foto */
-/* PRIMEIRO CARTÃO: configura fundo com imagem do LeBron, gradiente e borda. */
+
+/* ==========================================================
+   7. NOTÍCIA PRINCIPAL DO LEBRON JAMES
+   ========================================================== */
+
+/* Cria o cartão principal da notícia.
+   position: relative permite posicionar elementos internos
+   em relação a este cartão, quando necessário.
+   width: 100% ocupa a largura da coluna central.
+   min-height define uma altura mínima de 600 pixels.
+   background-color serve como fundo caso a imagem falhe.
+
+   background-image combina um gradiente escuro com uma foto.
+   O gradiente deixa o lado esquerdo mais escuro para facilitar
+   a leitura do texto e mantém a imagem visível à direita.
+   background-size: cover amplia ou reduz a imagem para cobrir
+   o cartão inteiro, podendo cortar algumas partes.
+   background-position controla o enquadramento da imagem.
+   background-repeat: no-repeat impede a repetição da foto.
+
+   color define a cor branca para os textos.
+   display: flex organiza os elementos internos.
+   flex-direction: column empilha os elementos verticalmente.
+   justify-content: space-between separa os elementos internos.
+   border-radius arredonda os cantos do cartão.
+   border cria uma borda discreta.
+   overflow: hidden esconde o conteúdo que ultrapassar as bordas. */
 .featured-card {
-  position: relative;
-  width: 100%;
-  min-height: 600px;
-  background-color: #000;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.5) 70%, transparent 100%), url('https://a.espncdn.com/photo/2026/0716/nba_lebron_james_philadelphia_sixers_cr_16x9.jpg');
-  background-size: cover;
-  background-position: right center;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 4px;
-  border: 1px solid #282828;
-  
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background-color: #000;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.95) 10%,
+            rgba(0, 0, 0, 0.5) 50%,
+            transparent 100%
+        ),
+        url('https://s2-ge.glbimg.com/6gK3FJKdQhduJu41hLR2BXVupsk=/0x0:1024x683/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/N/7/0CjsVhQu2ACgI9dckInw/gettyimages-2301578058.jpg');
+
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 4px;
+    border: 1px solid #282828;
+    overflow: hidden;
 }
 
-/* BANNER AZUL: cria a faixa do League Pass acima da notícia. */
+
+/* ==========================================================
+   8. BANNER DO LEAGUE PASS
+   ========================================================== */
+
+/* Cria a faixa azul acima da notícia principal.
+   display: flex coloca o texto e os elementos à direita
+   na mesma linha.
+   justify-content: space-between separa os dois lados.
+   align-items centraliza os elementos verticalmente.
+   padding define o espaço interno do banner.
+   gap estabelece um espaço mínimo entre os elementos. */
 .top-banner {
-  background-color: #0066ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 20px;
+    background-color: #0066ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 10px;
 }
 
-/* TEXTO DO BANNER: destaca a chamada em negrito e itálico. */
+/* Destaca o texto principal do banner.
+   font-weight: 900 deixa as letras muito grossas.
+   font-style: italic deixa o texto inclinado.
+   font-size controla o tamanho das letras. */
 .banner-text {
-  font-weight: 900;
-  font-style: italic;
-  font-size: 1.1rem;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.1rem;
 }
 
-/* LADO DIREITO DO BANNER: alinha League Pass e botão de assinatura. */
+/* Organiza o nome League Pass e o botão de assinatura.
+   display: flex coloca os dois elementos na mesma linha.
+   align-items centraliza os elementos verticalmente.
+   gap cria espaço entre eles.
+   flex-shrink: 0 evita que esse conjunto seja comprimido. */
 .banner-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
 }
 
-/* LEAGUE PASS: define o destaque e tamanho desse texto. */
+/* Define o estilo do nome League Pass. */
 .league-pass {
-  font-weight: bold;
-  font-size: 0.85rem;
+    font-weight: bold;
+    font-size: 0.85rem;
 }
 
-/* BOTÃO ASSINE JÁ: cria o botão branco arredondado. */
+/* Transforma o link de assinatura em um botão branco.
+   background e color definem as cores do botão.
+   padding cria espaço interno.
+   border-radius arredonda os cantos.
+   text-decoration remove o sublinhado do link.
+   font-size diminui o texto para caber no botão.
+   white-space: nowrap impede que o texto quebre em várias linhas. */
 .btn-signup {
-  background: #fff;
-  color: #000;
-  padding: 4px 12px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: bold;
+    background: #fff;
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
-/* CONTEÚDO DA NOTÍCIA: define espaçamento e largura da área de texto. */
+/* Escurece levemente o botão quando o mouse passa sobre ele. */
+.btn-signup:hover {
+    background-color: #ddd;
+}
+
+
+/* ==========================================================
+   9. TEXTOS E TÍTULOS DAS NOTÍCIAS
+   ========================================================== */
+
+/* Controla o espaço interno do conteúdo da notícia.
+   padding afasta o texto das bordas do cartão.
+   max-width limita a largura do bloco de texto,
+   evitando que as linhas fiquem compridas demais. */
 .main-content {
-  padding: 30px 40px;
-  max-width: 480px;
+    padding: 30px 40px;
+    max-width: 480px;
 }
 
-/* TÍTULO DA NOTÍCIA: deixa o texto grande, forte e em maiúsculas. */
+/* Formata os títulos que usam a classe title.
+   font-size define o tamanho das letras.
+   font-weight deixa o título em negrito.
+   text-transform transforma as letras em maiúsculas.
+   line-height controla a distância entre as linhas.
+   margin-bottom cria espaço abaixo do título. */
 .title {
-  font-size: 1.6rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1.1;
-  margin-bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 15px;
 }
 
-/* PARÁGRAFOS: controla cor, tamanho e espaçamento das descrições. */
+/* Formata os parágrafos das notícias.
+   font-size define o tamanho do texto.
+   color usa cinza-claro para diferenciar o texto dos títulos.
+   margin-bottom separa os parágrafos.
+   line-height melhora a distância entre as linhas. */
 .description {
-  font-size: 0.85rem;
-  color: #ccc;
-  margin-bottom: 15px;
-  line-height: 1.4;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
-/* CONTEÚDO RELACIONADO: estiliza o título dessa seção. */
+/* Aplica espaçamento aos títulos h2, h3 e h4
+   que aparecem dentro da área de conteúdo.
+   margin-bottom separa cada título do conteúdo seguinte.
+   line-height melhora o espaçamento entre suas linhas. */
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+/* Remove os marcadores padrão das listas nas notícias
+   e cria espaço abaixo delas. */
+.main-content ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+/* Define o espaço e o tamanho dos itens das listas.
+   margin-bottom separa os itens.
+   font-size ajusta o tamanho do texto.
+   line-height controla a distância entre as linhas. */
+.main-content li {
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+
+/* ==========================================================
+   10. CONTEÚDOS RELACIONADOS
+   ========================================================== */
+
+/* Ajusta o tamanho e a aparência do título da seção
+   de conteúdos relacionados.
+   color define o texto em cinza-claro. */
 .related-content h3 {
-  font-size: 0.75rem;
-  margin-bottom: 10px;
-  color: #ddd;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    color: #ddd;
 }
 
-/* LISTAS: remove os marcadores padrão das listas. */
-.related-content ul, .main-content ul {
-  list-style: none;
+/* Remove os marcadores padrão da lista de links relacionados. */
+.related-content ul {
+    list-style: none;
 }
 
-/* ITENS DE LISTA: define o espaço entre os itens. */
-.related-content li, .main-content li {
-  margin-bottom: 6px;
+/* Cria espaço entre os links relacionados. */
+.related-content li {
+    margin-bottom: 6px;
 }
 
-/* LINKS RELACIONADOS: define a aparência dos links para outros conteúdos. */
+/* Formata os links da seção relacionada.
+   color deixa os links brancos.
+   text-decoration remove o sublinhado.
+   font-size ajusta o tamanho do texto.
+   font-weight deixa os links em negrito. */
 .related-content a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-/* EFEITO DOS LINKS: sublinha o link quando o mouse passa por cima. */
+/* Adiciona sublinhado quando o visitante passa o mouse
+   sobre um link relacionado. */
 .related-content a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* SEGUNDO CARTÃO: usa a imagem do Shai e ajusta a altura. */
+
+/* ==========================================================
+   11. DUAS NOTÍCIAS SECUNDÁRIAS LADO A LADO
+   ========================================================== */
+
+/* Organiza as notícias do calendário e de Bronny James.
+
+   display: grid ativa o sistema de grade.
+   grid-template-columns cria duas colunas de mesma largura.
+   minmax(0, 1fr) permite que cada coluna diminua
+   sem ser forçada pelo tamanho do conteúdo.
+   gap cria espaço entre os dois cartões.
+
+   width: 1200px define a largura total das duas notícias.
+   max-width: none impede que outro limite máximo reduza
+   essa largura.
+
+   position: relative permite ajustar a posição do conjunto.
+   left: 50% desloca o conjunto metade da largura do elemento pai.
+   transform: translateX(-50%) desloca o conjunto de volta
+   pela metade da própria largura, centralizando-o.
+
+   align-items: stretch faz os cartões ocuparem a altura
+   disponível na linha da grade.
+   margin-top cria espaço acima das notícias secundárias. */
+.secondary-news {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    width: 1200px;
+    max-width: none;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    align-items: stretch;
+    margin-top: 75px;
+}
+
+
+/* ==========================================================
+   12. CARTÃO DA NOTÍCIA SOBRE O CALENDÁRIO DA NBA
+   ========================================================== */
+
+/* Configura o cartão da segunda notícia.
+   width: 100% faz o cartão preencher sua coluna da grade.
+   min-width: 0 permite que ele fique menor se necessário.
+   min-height: auto deixa a altura depender do conteúdo.
+   background-color define o fundo preto.
+
+   O gradiente escurece a parte esquerda da imagem,
+   facilitando a leitura do texto.
+   url define a imagem usada como fundo.
+   background-size: cover cobre o cartão com a imagem.
+   background-position centraliza o enquadramento.
+   background-repeat impede a repetição da imagem.
+   border e border-radius definem a borda e os cantos.
+   overflow: hidden esconde o que ultrapassar as bordas. */
 .featured-card2 {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.5) 75%, transparent 100%), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8K63Meqs-h0ivPWJryh0vkG06kIx-uWW4touhZ0Kvay1bljA1BJMZCX1a&s=10');
-  min-height: auto;
-  
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    background-color: #000;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.95) 5%,
+            rgba(0, 0, 0, 0.5) 65%,
+            transparent 100%
+        ),
+        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8K63Meqs-h0ivPWJryh0vkG06kIx-uWW4touhZ0Kvay1bljA1BJMZCX1a&s=10');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 1px solid #282828;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-/* TERCEIRO CARTÃO: usa a imagem da notícia sobre Bronny James. */
+
+/* ==========================================================
+   13. CARTÃO DA NOTÍCIA SOBRE BRONNY JAMES
+   ========================================================== */
+
+/* Configura o cartão da terceira notícia.
+   A organização é semelhante à notícia do calendário:
+   o cartão ocupa a largura da coluna, mantém o fundo preto
+   e usa um gradiente escuro sobre uma imagem de fundo.
+   background-position: center centraliza a foto.
+   border arredonda e delimita o cartão.
+   overflow esconde as partes que ultrapassarem suas bordas. */
 .featured-card3 {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.5) 75%, transparent 100%), url('https://s2-ge.glbimg.com/TbXwsjh1gNiHDeyNfy7fbWyJl3M=/0x0:5284x3523/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/z/A/II51N9TVGKBKqYLkySnQ/2026-09-28t222403z-903100992-mt1usatoday29944560-rtrmadp-3-nba-los-angeles-lakers-media-day.jpg');
-  min-height: auto;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    background-color: #000;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.95) 5%,
+            rgba(0, 0, 0, 0.5) 35%,
+            transparent 100%
+        ),
+        url('https://s2-ge.glbimg.com/TbXwsjh1gNiHDeyNfy7fbWyJl3M=/0x0:5284x3523/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/z/A/II51N9TVGKBKqYLkySnQ/2026-09-28t222403z-903100992-mt1usatoday29944560-rtrmadp-3-nba-los-angeles-lakers-media-day.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 1px solid #282828;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-/* COLUNA DIREITA: define a largura e organiza os painéis laterais. */
+
+/* ==========================================================
+   14. AJUSTES INTERNOS DAS NOTÍCIAS SECUNDÁRIAS
+   ========================================================== */
+
+/* Faz o conteúdo interno das duas notícias ocupar
+   toda a largura do respectivo cartão.
+   max-width: none remove o limite de 480 pixels aplicado
+   anteriormente à classe main-content.
+   padding cria espaço entre o texto e as bordas.
+   overflow-wrap permite quebrar palavras muito compridas
+   para evitar que ultrapassem o cartão. */
+.secondary-news .main-content {
+    width: 100%;
+    max-width: none;
+    padding: 30px;
+    overflow-wrap: break-word;
+}
+
+/* Ajusta os títulos principais das notícias secundárias
+   para se adaptarem melhor aos cartões. */
+.secondary-news .title {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+/* Ajusta os títulos h2 internos que não possuem
+   a classe title, criando hierarquia entre os títulos. */
+.secondary-news h2:not(.title) {
+    font-size: 1.15rem;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+/* Define o tamanho e os espaços dos títulos h3
+   dentro das notícias secundárias. */
+.secondary-news h3 {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+/* Ajusta o tamanho e a leitura dos subtítulos h4. */
+.secondary-news h4 {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Melhora a leitura dos parágrafos das notícias secundárias
+   aumentando um pouco o espaçamento entre as linhas. */
+.secondary-news .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Remove os marcadores padrão das listas secundárias
+   e adiciona espaço abaixo delas. */
+.secondary-news ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+/* Separa os itens das listas das notícias secundárias. */
+.secondary-news li {
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================================
+   15. COLUNA DIREITA
+   ========================================================== */
+
+/* Organiza os painéis de horários, últimas notícias
+   e formulário de sugestões.
+   width define a largura da coluna.
+   display: flex ativa a organização flexível.
+   flex-direction: column empilha os painéis.
+   gap cria espaço entre eles.
+   flex-shrink: 0 evita que a coluna seja comprimida. */
 .right-sidebar {
-  width: 270px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex-shrink: 0;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
 }
 
-/* Jogos e Notícias da Lateral Direita */
-/* JOGOS: separa visualmente cada partida na coluna direita. */
+
+/* ==========================================================
+   16. HORÁRIOS DOS JOGOS
+   ========================================================== */
+
+/* Formata cada bloco de jogo.
+   margin-bottom cria espaço abaixo do jogo.
+   border-bottom separa os jogos por uma linha.
+   padding-bottom afasta o texto da linha inferior. */
 .game-item {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #282828;
-  padding-bottom: 6px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #282828;
+    padding-bottom: 6px;
 }
 
-/* DATA DOS JOGOS: destaca o horário e a data em azul. */
+/* Destaca a data e o horário dos jogos em azul. */
 .game-date {
-  font-size: 0.7rem;
-  color: #00a2ff;
-  font-weight: bold;
+    font-size: 0.7rem;
+    color: #00a2ff;
+    font-weight: bold;
 }
 
-/* TIMES DOS JOGOS: destaca os nomes das equipes. */
+/* Formata os nomes das equipes que vão jogar.
+   font-size controla o tamanho do texto.
+   font-weight deixa os nomes em negrito.
+   color mantém os nomes brancos. */
 .game-teams {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
 }
 
-/* NOTÍCIAS LATERAIS: organiza os itens de notícias da coluna direita. */
+
+/* ==========================================================
+   17. LINKS DE NOTÍCIAS NA COLUNA DIREITA
+   ========================================================== */
+
+/* Empilha o rótulo e o link de cada notícia.
+   gap cria espaço entre o rótulo e o link.
+   margin-bottom separa uma notícia da seguinte. */
 .sidebar-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
 }
 
-/* CATEGORIA DA NOTÍCIA: mostra o rótulo pequeno em azul. */
+/* Formata os pequenos rótulos das notícias,
+   como PRÓXIMO JOGO e TRANSFERÊNCIAS. */
 .sidebar-item span {
-  font-size: 0.65rem;
-  color: #00a2ff;
-  font-weight: bold;
+    font-size: 0.65rem;
+    color: #00a2ff;
+    font-weight: bold;
 }
 
-/* LINK DA NOTÍCIA LATERAL: configura o texto clicável. */
+/* Formata os links de notícias da coluna direita.
+   color deixa os links brancos.
+   text-decoration remove o sublinhado.
+   font-size define o tamanho do texto.
+   font-weight deixa os links em negrito. */
 .sidebar-item a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-/* EFEITO DOS LINKS LATERAIS: sublinha ao passar o mouse. */
+/* Sublinha os links quando o visitante passa o mouse. */
 .sidebar-item a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* Formulário de Sugestões na Barra Lateral */
-/* FORMULÁRIO: organiza os campos de sugestões em coluna. */
+
+/* ==========================================================
+   18. FORMULÁRIO DE OPINIÕES E SUGESTÕES
+   ========================================================== */
+
+/* Organiza os campos e o botão do formulário verticalmente.
+   gap cria espaço entre os campos. */
 .feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* GRUPO DO FORMULÁRIO: mantém cada rótulo junto ao seu campo. */
+/* Organiza cada campo junto de seu rótulo.
+   flex-direction: column coloca o rótulo acima do campo.
+   gap cria um pequeno espaço entre os dois. */
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-/* RÓTULOS: estiliza os textos Nome, E-mail e Sua Sugestão. */
+/* Formata os rótulos Nome, E-mail e Sua Sugestão.
+   font-size deixa o texto menor.
+   font-weight destaca os rótulos em negrito.
+   color usa cinza-claro. */
 .form-group label {
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #ccc;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #ccc;
 }
 
+/* Aplica o mesmo estilo às caixas de texto e à área
+   maior usada para escrever a sugestão.
+   width: 100% ocupa a largura disponível.
+   padding cria espaço interno.
+   background-color deixa o campo escuro.
+   border desenha uma borda cinza.
+   border-radius arredonda os cantos.
+   color define a cor do texto digitado.
+   font-size ajusta o tamanho da letra.
+   outline: none remove o contorno padrão do navegador. */
 .form-group input,
-/* CAIXA DE SUGESTÕES: impede o redimensionamento manual. */
 .form-group textarea {
-  width: 100%;
-  padding: 7px;
-  background-color: #111;
-  border: 1px solid #333;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 0.8rem;
-  outline: none;
+    width: 100%;
+    padding: 7px;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.8rem;
+    outline: none;
 }
 
+/* Muda a borda do campo para azul quando ele está selecionado,
+   ajudando o visitante a identificar onde está digitando. */
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #00a2ff;
+    border-color: #00a2ff;
 }
 
-/* CAIXA DE SUGESTÕES: impede o redimensionamento manual. */
+/* Impede que o visitante redimensione manualmente
+   a área de texto da sugestão. */
 .form-group textarea {
-  resize: none;
+    resize: none;
 }
 
-/* BOTÃO ENVIAR: define cor azul, tamanho e formato do botão. */
+/* Estiliza o botão de envio do formulário.
+   background-color define o fundo azul.
+   color deixa o texto branco.
+   border: none remove a borda padrão.
+   padding aumenta a área clicável.
+   border-radius arredonda os cantos.
+   font-weight destaca o texto.
+   cursor: pointer mostra a mão ao passar sobre o botão.
+   margin-top cria espaço acima do botão. */
 .btn-submit {
-  background-color: #00a2ff;
-  color: #fff;
-  border: none;
-  padding: 8px;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 0.8rem;
-  cursor: pointer;
-  margin-top: 4px;
+    background-color: #00a2ff;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 4px;
 }
 
-/* EFEITO DO BOTÃO: escurece o azul quando o mouse passa por cima. */
+/* Escurece o botão de envio quando o mouse passa sobre ele. */
 .btn-submit:hover {
-  background-color: #0082cc;
+    background-color: #0082cc;
+}
+
+
+/* ==========================================================
+   19. RESPONSIVIDADE PARA TABLETS E TELAS MÉDIAS
+   ========================================================== */
+
+/* Estas regras são aplicadas quando a largura da tela
+   é de 1100 pixels ou menos.
+
+   flex-wrap permite que as colunas passem para outra linha.
+   A área central pode crescer ou diminuir, com uma base
+   de 600 pixels, e width: auto deixa o flex controlar a largura.
+   A coluna esquerda passa a ter 220 pixels.
+   A coluna direita ocupa toda a linha e permite que seus
+   painéis sejam organizados lado a lado.
+   flex: 1 1 240px permite que cada painel direito cresça,
+   diminua ou quebre para outra linha conforme o espaço.
+
+   As notícias secundárias passam a usar a largura disponível.
+   left e transform são zerados para cancelar o deslocamento
+   usado para centralizar o conjunto na tela grande. */
+@media (max-width: 1100px) {
+
+    .page-container {
+        flex-wrap: wrap;
+    }
+
+    .main-feed {
+        flex: 1 1 600px;
+        width: auto;
+        min-width: 0;
+    }
+
+    .left-sidebar {
+        width: 220px;
+    }
+
+    .right-sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .right-sidebar .widget-box {
+        flex: 1 1 240px;
+    }
+
+    .secondary-news {
+        width: 100%;
+        left: auto;
+        transform: none;
+    }
+}
+
+
+/* ==========================================================
+   20. RESPONSIVIDADE PARA CELULARES
+   ========================================================== */
+
+/* Estas regras são aplicadas quando a tela tem
+   700 pixels de largura ou menos.
+
+   O menu pode quebrar para mais de uma linha e tem espaços
+   menores para se adaptar à tela do celular.
+   O conteúdo principal passa a ser organizado em coluna.
+   As colunas laterais ocupam toda a largura disponível.
+   A área central deixa de disputar espaço horizontal com elas.
+   O cartão principal mantém uma altura mínima de 600 pixels.
+   O conteúdo ganha margens internas menores.
+   O banner pode quebrar para mais de uma linha e seu texto diminui.
+   As notícias secundárias passam de duas colunas para uma,
+   ficando uma abaixo da outra.
+   A coluna direita volta a empilhar seus painéis verticalmente. */
+@media (max-width: 700px) {
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .page-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        width: 100%;
+    }
+
+    .main-feed {
+        width: 100%;
+        flex: none;
+    }
+
+    .featured-card {
+        min-height: 600px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .top-banner {
+        flex-wrap: wrap;
+    }
+
+    .banner-text {
+        font-size: 0.9rem;
+    }
+
+    .secondary-news {
+        width: 100%;
+        left: auto;
+        transform: none;
+        grid-template-columns: 1fr;
+    }
+
+    .secondary-news .main-content {
+        padding: 20px;
+    }
+
+    .right-sidebar {
+        flex-direction: column;
+    }
+
 }
