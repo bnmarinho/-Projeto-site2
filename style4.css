@@ -256,16 +256,124 @@ body {
 }
 
 /* RODAPÉ: centraliza os créditos no fim da página. */
-footer {
-    background-color: #080808;
+/* --- RODAPÉ NBA --- */
+.nba-footer {
+    background-color: black;
+    color: #a0a0a0;
+    border-top: 2px solid #222222;
+    padding: 40px 20px 20px 20px;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
 
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Colunas */
+.footer-brand {
+    flex: 2;
+    min-width: 250px;
+}
+
+.footer-brand h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #888888;
+}
+
+.footer-links, .footer-social {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-links h4, .footer-social h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Links de Navegação */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #888888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #1d428a; /* Azul característico da NBA (ou podes trocar por branco/vermelho) */
+}
+
+/* Redes Sociais */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-icons a {
+    color: #888888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #c8102e; /* Vermelho característico da NBA */
+}
+
+/* Linha Inferior */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
     text-align: center;
+}
 
-    padding: 30px;
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: #555555;
+}
 
-    color: #888;
+/* Estilo para a imagem do logótipo no rodapé */
+.footer-logo {
+    max-width: 400px; /* Ajusta a largura máxima conforme o tamanho da tua imagem */
+    height: auto;     /* Mantém as proporções da imagem sem distorcer */
+    margin-bottom: 12px;
+    display: block;   /* Garante que fique numa linha própria acima do texto */
+}
 
-    border-top: 1px solid #333;
+/* Responsividade para ecrãs pequenos */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
 }
 
 /* RESPONSIVIDADE: adapta menu, banner e cards a telas de até 800px. */

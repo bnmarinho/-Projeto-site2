@@ -20,6 +20,7 @@
    color define os textos brancos como padrão.
    min-height faz o corpo ocupar pelo menos toda a altura da tela. */
 body {
+    
     background-color: #111;
     color: #fff;
     min-height: 100vh;
@@ -509,11 +510,11 @@ body {
     background-image:
         linear-gradient(
             to right,
-            rgba(0, 0, 0, 0.95) 5%,
-            rgba(0, 0, 0, 0.5) 65%,
+            rgba(0, 0, 0, 0.95) 15%,
+            rgba(0, 0, 0, 0.5) 85%,
             transparent 100%
         ),
-        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8K63Meqs-h0ivPWJryh0vkG06kIx-uWW4touhZ0Kvay1bljA1BJMZCX1a&s=10');
+        url('https://i.pinimg.com/564x/fb/d8/13/fbd813f6f4324a1acab59fcf38247f42.jpg');
 
     background-size: cover;
     background-position: center;
@@ -546,8 +547,8 @@ body {
     background-image:
         linear-gradient(
             to right,
-            rgba(0, 0, 0, 0.95) 5%,
-            rgba(0, 0, 0, 0.5) 35%,
+            rgba(0, 0, 0, 0.95) 35%,
+            rgba(0, 0, 0, 0.5) 65%,
             transparent 100%
         ),
         url('https://s2-ge.glbimg.com/TbXwsjh1gNiHDeyNfy7fbWyJl3M=/0x0:5284x3523/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/z/A/II51N9TVGKBKqYLkySnQ/2026-09-28t222403z-903100992-mt1usatoday29944560-rtrmadp-3-nba-los-angeles-lakers-media-day.jpg');
@@ -561,6 +562,79 @@ body {
     overflow: hidden;
 }
 
+
+   /* Cartão de Notícia Horizontal com Imagem de Fundo */
+.news-card-overlay {
+    position: relative;
+    width: 100%;
+    min-height: 900px; /* Podes ajustar a altura conforme preferires */
+    margin-top: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+    display: flex;
+    align-items: start; /* Alinha o conteúdo verticalmente ao centro */
+    
+    /* Substitui 'caminho-da-sua-imagem.jpg' pelo link ou caminho real da tua imagem */
+    background-image: url('https://s.yimg.com/lo/mysterio/api/333f416bf3973dace64209b07a20977ce9ada8c54bde4c99008a9737c52d84bf/lightyear_networkapi/resizefill_w1200_h675%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fsixers_wire_usa_today_sports_articles_847%2Fc3457b96dc06202561a7a8f0b548b897.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+/* Camada escura em gradiente (mais escura à esquerda e suave à direita) */
+.overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 5%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Bloco do texto posicionado à esquerda */
+.news-content-over {
+    position: relative;
+    z-index: 2;
+    padding: 35px;
+    color: #ffffff;
+    text-align: left;
+    max-width: 55%; /* Limita a largura para o texto não invadir o lado direito */
+}
+
+/* Estilo do Título Principal */
+.news-content-over h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+/* Estilo dos parágrafos / subtítulos */
+.news-content-over p {
+    font-size: 1rem;
+    color: #d1d1d1;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Responsividade para telemóveis e ecrãs mais estreitos */
+@media (max-width: 768px) {
+    .news-card-overlay {
+        min-height: auto;
+        align-items: flex-end; /* No telemóvel, joga o texto para baixo */
+    }
+
+    .news-content-over {
+        max-width: 100%; /* Ocupa a largura toda em ecrãs pequenos */
+        padding: 20px;
+    }
+
+    .overlay-bg {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0.5) 100%);
+    }
+}
 
 /* ==========================================================
    14. AJUSTES INTERNOS DAS NOTÍCIAS SECUNDÁRIAS
@@ -814,6 +888,127 @@ body {
 /* Escurece o botão de envio quando o mouse passa sobre ele. */
 .btn-submit:hover {
     background-color: #0082cc;
+}
+
+
+/* --- RODAPÉ NBA --- */
+.nba-footer {
+    background-color: black;
+    color: #a0a0a0;
+    border-top: 2px solid #222222;
+    padding: 40px 20px 20px 20px;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Colunas */
+.footer-brand {
+    flex: 2;
+    min-width: 250px;
+}
+
+.footer-brand h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #888888;
+}
+
+.footer-links, .footer-social {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-links h4, .footer-social h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Links de Navegação */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #888888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #1d428a; /* Azul característico da NBA (ou podes trocar por branco/vermelho) */
+}
+
+/* Redes Sociais */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-icons a {
+    color: #888888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #c8102e; /* Vermelho característico da NBA */
+}
+
+/* Linha Inferior */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: #555555;
+}
+
+/* Estilo para a imagem do logótipo no rodapé */
+.footer-logo {
+    max-width: 400px; /* Ajusta a largura máxima conforme o tamanho da tua imagem */
+    height: auto;     /* Mantém as proporções da imagem sem distorcer */
+    margin-bottom: 12px;
+    display: block;   /* Garante que fique numa linha própria acima do texto */
+}
+
+/* Responsividade para ecrãs pequenos */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
 }
 
 
